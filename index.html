@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="apps.js" defer></script> <!-- Ensure apps.js exists in the 'client' directory -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Delivery App</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Registration Form -->
+                <h2>Register</h2>
+                <form action="/register" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="role" class="form-control" placeholder="Role" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Login Form -->
+                <h2>Login</h2>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+        </div>
+        <a href="profile.html" class="btn btn-secondary mt-3">Go to Profile</a>
+
+        <!-- Chat Section -->
+        <h2>Chat</h2>
+        <ul id="messages" class="list-group"></ul>
+        <div class="input-group mt-3">
+            <input type="text" id="messageInput" class="form-control" placeholder="Type your message...">
+            <div class="input-group-append">
+                <button id="sendButton" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
